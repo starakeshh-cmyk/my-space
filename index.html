@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>My Ammadi ❤️</title>
+<title>My Amadi ❤️</title>
+
 <style>
 body {
   margin: 0;
@@ -9,47 +10,148 @@ body {
   background: linear-gradient(to right, #ff758c, #ff7eb3);
   color: white;
   text-align: center;
+  overflow-x: hidden;
 }
+
 .container {
-  margin-top: 60px;
+  margin-top: 50px;
+  padding: 20px;
 }
+
 img {
   width: 260px;
   border-radius: 20px;
   box-shadow: 0 0 25px rgba(0,0,0,0.5);
 }
+
 h1 {
   font-size: 42px;
+  margin-bottom: 10px;
 }
+
 p {
   font-size: 20px;
-  margin: 20px;
+  margin: 12px 30px;
+  line-height: 1.6;
 }
+
 .heart {
   font-size: 30px;
   animation: beat 1s infinite;
+  margin-top: 20px;
 }
+
 @keyframes beat {
   0%,100% { transform: scale(1); }
-  50% { transform: scale(1.2); }
+  50% { transform: scale(1.3); }
+}
+
+/* typing effect */
+#typing {
+  font-size: 26px;
+  margin-top: 20px;
+  font-weight: bold;
+  border-right: 3px solid white;
+  display: inline-block;
+  padding-right: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* floating hearts */
+.heart-float {
+  position: fixed;
+  bottom: -10px;
+  font-size: 20px;
+  animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-800px); opacity: 0; }
 }
 </style>
+
 </head>
+
 <body>
 
 <div class="container">
-  <h1>My Ammadi ❤️</h1>
 
- <img src="1000064767.jpg"alt="Us"
-   style="width:250px; border-radius:20px;">
-  
-  <p>Without you, I am nothing.</p>
-  <p>You are my world, Vennela.</p>
-  <p>Every heartbeat of mine says your name.</p>
-  <p>I love you more than anything in this world.</p>
+  <h1>Naa Amadi ❤️</h1>
+
+  <img src="yourphoto.jpg" alt="Us">
+
+  <div id="typing"></div>
+
+  <p>Nee leni jeevitham naaku jeevitham kaadhu Amadi…</p>
+
+  <p>Nuvvu naa pakkana unte nenu ee prapanchanni kuda jayinchagalanu…</p>
+
+  <p>Nuvvu naatho unte naaku emi kavali ani anipinchadhu… nuvve naa anni…</p>
+
+  <p>Nee navvu chusthe naa badha anni marchipotha…</p>
+
+  <p>Nuvvu maatladithe naa rojanta santhosham tho nimpothundi…</p>
+
+  <p>Nuvvu naatho unte nenu strongest person avutha…</p>
+
+  <p>Nee kosam nenu yedaina cheyadaniki ready Amadi…</p>
+
+  <p>Nuvvu naa jeevitham lo vachinappudu nenu complete ayyanu…</p>
+
+  <p>Nuvvu lekunda nenu okka nimisham kuda alochinchalekapotha…</p>
+
+  <p>Prathi roju ninnu marinta ekkuvaga preminchutunna…</p>
+
+  <p>Nee premanu pondadam naa adhrushtam…</p>
+
+  <p>Nuvvu naa prapancham… naa oopiri… naa santhosham… naa strength…</p>
+
+  <p>Nee peru vinagane naa gunde fast ga kottukuntundi…</p>
+
+  <p>Nuvvu naa life lo unte naku impossible ane word undadhu…</p>
+
+  <p>Ninnu preminchadam naa alavatu kaadhu… naa jeevitham…</p>
+
+  <p>Forever ninnu premisthune untanu Amadi… ❤️</p>
+
+  <h2 style="font-size:32px; margin-top:20px;">
+    Ammadi Nani Bujji I Love You ❤️
+  </h2>
 
   <div class="heart">❤️</div>
+
 </div>
+
+<script>
+const text = "I Love You Amadi ❤️";
+let i = 0;
+
+function typing() {
+  if (i < text.length) {
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typing, 100);
+  }
+}
+
+typing();
+
+// floating hearts
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.classList.add("heart-float");
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 6000);
+}, 500);
+</script>
 
 </body>
 </html>
